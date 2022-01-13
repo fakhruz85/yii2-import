@@ -14,7 +14,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-		"phpoffice/phpexcel": "*"
+		"phpoffice/phpspreadsheet": "*"
     },
     "require-dev": {
         "phpdocumentor/phpdocumentor": "2.*"
