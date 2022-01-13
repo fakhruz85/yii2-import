@@ -21,7 +21,7 @@ class ExcelConsumer extends BaseObject implements ConsumerInterface
 		} catch (Exception $e) {
 			throw new InvalidFileException();
 		}
-		$sheet = $objPHPExcel->getSheet();
+		$sheet = $objPHPExcel->getSheet(0);
 		$highestRow = $sheet->getHighestRow();
 		$data = [];
 		$highestCol = $this->getNameFromNumber($importer->getMaxColIndex() + 1);
