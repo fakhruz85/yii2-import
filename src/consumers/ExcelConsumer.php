@@ -15,8 +15,8 @@ class ExcelConsumer extends BaseObject implements ConsumerInterface
 	public function consume(&$importer)
 	{
 		try {
-			$fileType = \PHPExcel_IOFactory::identify($importer->file);
-			$objReader = \PHPExcel_IOFactory::createReader($fileType);
+			$fileType = \PhpOffice\PhpSpreadsheet\IOFactory::identify($importer->file);
+			$objReader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader($fileType);
 			$objPHPExcel = $objReader->load($importer->file);
 		} catch (Exception $e) {
 			throw new InvalidFileException();
@@ -45,8 +45,8 @@ class ExcelConsumer extends BaseObject implements ConsumerInterface
 		unset($objReader);
 		return $data;
 	}
-	
-	protected function getNameFromNumber($num) 
+
+	protected function getNameFromNumber($num)
 	{
 	    $numeric = ($num - 1) % 26;
 	    $letter = chr(65 + $numeric);
@@ -57,6 +57,6 @@ class ExcelConsumer extends BaseObject implements ConsumerInterface
 	        return $letter;
 	    }
 	}
-	
-	
+
+
 }
